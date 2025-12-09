@@ -1,0 +1,38 @@
+# Werelddata (runtime, wordt groot en verandert constant)
+world/
+world_nether/
+world_the_end/
+# Als je een custom worldnaam hebt:
+knk_*world*/
+*world*/region/
+*world*/playerdata/
+*world*/stats/
+
+# Logs & crash reports
+logs/
+crash-reports/
+*.log
+
+# Cache / tijdelijke data
+cache/
+*.tmp
+
+# Plugin specifieke data die je niet wilt tracken
+plugins/CoreProtect/
+plugins/dynmap/tiles/
+plugins/dynmap/web/tiles/
+plugins/*/data/
+plugins/*/userdata/
+
+# Server files die automatisch gegenereerd worden
+usercache.json
+banned-players.json
+banned-ips.json
+whitelist.json
+ops.json
+
+# IDE/OS rommel
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
