@@ -1,37 +1,65 @@
-# Werelddata (runtime, wordt groot en verandert constant)
-world/
-world_nether/
-world_the_end/
-# Als je een custom worldnaam hebt:
-knk_*world*/
-*world*/region/
-*world*/playerdata/
-*world*/stats/
+###########################################################
+# Minecraft Paper dev server – gitignore
+###########################################################
 
-# Logs & crash reports
+# === Paper internals (kunnen altijd opnieuw gedownload worden) ===
+libraries/
+versions/
+
+# Optioneel: root server-jar(s) niet tracken (haal # weg als je ze ook wilt negeren)
+#*.jar
+
+# === Wereld-data (runtime, groot en vaak veranderend) ===
+# Dit pakt: world, world_nether, world_the_end, world_KNK-DEV, etc.
+world*/
+
+# === Logs & crash reports ===
 logs/
 crash-reports/
 *.log
 
-# Cache / tijdelijke data
+# === Algemene runtime / cache ===
 cache/
 *.tmp
-
-# Plugin specifieke data die je niet wilt tracken
-plugins/CoreProtect/
-plugins/dynmap/tiles/
-plugins/dynmap/web/tiles/
-plugins/*/data/
-plugins/*/userdata/
-
-# Server files die automatisch gegenereerd worden
 usercache.json
 banned-players.json
 banned-ips.json
 whitelist.json
 ops.json
 
-# IDE/OS rommel
+# === Plugin data die je meestal NIET wilt tracken ===
+
+# CoreProtect database & logs
+plugins/CoreProtect/
+
+# Dynmap tiles (groot en genereerbaar)
+plugins/dynmap/tiles/
+plugins/dynmap/web/tiles/
+
+# FastAsyncWorldEdit history (grote history-bestanden)
+plugins/FastAsyncWorldEdit/history/
+
+# spark tijdelijke bestanden
+plugins/spark/tmp/
+
+# Algemenere patronen: 'data', 'logs', 'cache', 'storage', 'temp', 'tmp' mappen in plugins
+plugins/**/data/
+plugins/**/userdata/
+plugins/**/logs/
+plugins/**/cache/
+plugins/**/storage/
+plugins/**/temp/
+plugins/**/tmp/
+
+# Let op: plugins/WorldGuard/worlds/... NIET expliciet negeren,
+# die configs wil je juist wél in Git houden.
+
+# === Overige serverfiles die automatisch gegenereerd worden ===
+# (optioneel, kun je weghalen als je ze juist wel wilt tracken)
+#server-icon.png
+#eula.txt
+
+# === IDE / OS rommel ===
 .DS_Store
 Thumbs.db
 .idea/
