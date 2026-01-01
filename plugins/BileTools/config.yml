@@ -1,0 +1,12 @@
+remote-deploy:
+  master:
+    master-deploy-to:
+    - yourserver.com:9876:password
+    master-deploy-signatures:
+    - MyPlugin
+    - AnotherPlugin
+    master-enabled: false
+  slave:
+    slave-payload: pickapassword
+    slave-port: 9876
+    slave-enabled: false
